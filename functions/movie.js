@@ -1,10 +1,11 @@
 const axios = require('axios')
+const OMDB_API_KEY = process.env.OMDB_API_KEY
+
 
 exports.handler = async function (event) {
   console.log(event)
   const payload = JSON.parse(event.body)
   const { title, type, year, page, id } = payload
-  const OMDB_API_KEY = '7035c60c'
   const url = id 
     // id의 데이터가 있는 경우 : 단일 영화정보의 상세 내용
     ? `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}` 
