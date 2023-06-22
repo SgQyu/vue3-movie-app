@@ -1,5 +1,5 @@
 import axios from 'axios'
-import _uniqBy from 'lodash/uniqBY'
+import { uniqBy } from 'lodash'
 
 const _defaultMessage = 'Search for the movie title'
 
@@ -47,7 +47,7 @@ export default {
         const { Search, totalResults } = res.data
 
         commit('updateState', {
-          movies: _uniqBy(Search, 'imdbID')
+          movies: uniqBy(Search, 'imdbID')
         })
   
         console.log(totalResults) // 317
@@ -71,7 +71,7 @@ export default {
             commit('updateState', {
               movies: [
                 ...state.movies, 
-                ..._uniqBy(Search, 'imdbID')
+                ...uniqBy(Search, 'imdbID')
               ]
             })
           }
