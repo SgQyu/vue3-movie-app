@@ -1,0 +1,23 @@
+// 변수의 기본값을 재정의
+$primary: #fdc000;
+
+$font-set1: "Oswald", sans-serif;
+$font-set2: "Roboto", sans-serif;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 704px,
+  lg: 924px,
+  xl: 1140px,
+  xxl: 1364px
+);
+
+
+
+
+// Required
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
